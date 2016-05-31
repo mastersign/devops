@@ -18,4 +18,6 @@ Commands
   Queries a PostgreSQL database and prints the result in one of the following formats:
   `table`, `csv`, `tsv`, `html`, `md_table`, `md_list`.
   Use `pgquery -h` to display the usage of the command.
+* `mysql_dump`
+  Creates a dump of all tables in a MySQL database as SQL and CSV files.
 

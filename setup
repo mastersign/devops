@@ -18,4 +18,5 @@ function activate () {
 activate rabbitmq/mq.py mq
 activate rabbitmq/mqtopic.py mqtopic
 activate pgsql/pgquery.py pgquery
+activate mysql/mysql_dump.py mysql_dump
 

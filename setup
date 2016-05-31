@@ -1,0 +1,21 @@
+#!/bin/bash
+
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+TRG=$HOME/bin
+
+if [ ! -d "$TRG" ]; then
+    mkdir "$TRG"
+fi
+
+function activate () {
+    SCRIPT="$DIR/$1"
+    CMD="$TRG/$2"
+    chmod 0770 "$SCRIPT"
+    if [ -L "$CMD" ]; then rm "$CMD"; fi
+    ln -s "$SCRIPT" "$CMD"
+}
+
+activate rabbitmq/mq.py mq
+activate rabbitmq/mqtopic.py mqtopic
+activate pgsql/pgquery.py pgquery
+
